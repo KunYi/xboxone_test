@@ -176,11 +176,25 @@ int main(int argc, char **argv) {
 
 	//  unnecessary, to kernel driver will handle this,
 	//  but you can to add xpad in module blacklist
-	printf("[!] Power On\r\n");
-        xboxone_poweron[seq_idx] = seq++;
-	libusb_interrupt_transfer(dev_handle, 0x02, xboxone_poweron, sizeof(xboxone_poweron), &actual, 5000);
-        sleep(1);
-        print_response(dev_handle);
+	// printf("[!] Power On\r\n");
+        // xboxone_poweron[seq_idx] = seq++;
+	// libusb_interrupt_transfer(dev_handle, 0x02, xboxone_poweron, sizeof(xboxone_poweron), &actual, 5000);
+        // sleep(1);
+        // print_response(dev_handle);
+
+	// printf("[!] Power Off, Must press on Controller power button\r\n");
+        // xboxone_poweron[seq_idx] = seq++;
+        // xboxone_poweron[4] = 0x04;
+	// libusb_interrupt_transfer(dev_handle, 0x02, xboxone_poweron, sizeof(xboxone_poweron), &actual, 5000);
+        // sleep(3);
+
+	// printf("[!] Power On\r\n");
+        // xboxone_poweron[seq_idx] = seq++;
+        // xboxone_poweron[4] = 0x00;
+	// libusb_interrupt_transfer(dev_handle, 0x02, xboxone_poweron, sizeof(xboxone_poweron), &actual, 5000);
+        // sleep(1);
+        // print_response(dev_handle);
+
 
 	printf("[!] Set volume\r\n");
         xboxone_volumeon[seq_idx] = seq++;
